@@ -3,7 +3,7 @@ var app = express()
 
 var port = process.env.PORT || 5000;
 app.post('/messages', function (req, res) {
-  var requestBody=req.post;
+  var requestBody=req;
   console.log(JSON.stringify(requestBody));
   res.send('Hello World!')
 })
