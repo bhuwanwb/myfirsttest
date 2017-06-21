@@ -2,7 +2,8 @@ var express = require('express')
 var app = express()
 
 var port = process.env.PORT || 5000;
-app.get('/messages', function (req, res) {
+app.post('/messages', function (req, res) {
+  console.log(JSON.stringify(req));
   res.send('Hello World!')
 })
 
