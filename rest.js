@@ -9,9 +9,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 5000;
 app.post('/messages', function (req, res) {
-  var requestBody=req.body.formData;
+  var requestBody=req.body;
   console.log(JSON.stringify(requestBody));
-  res.send('Success : '+JSON.stringify(req.body.formData));
+  res.send('Success : '+JSON.stringify(req.body));
 })
 
 app.get('/data', function (req, res) {
