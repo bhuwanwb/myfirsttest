@@ -2,14 +2,14 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 5000;
 app.post('/messages', function (req, res) {
-  var requestBody=req.body;
+  var requestBody=req.body.formData;
   console.log(JSON.stringify(requestBody));
   res.send('Success : '+JSON.stringify(req.body));
 })
