@@ -1,10 +1,16 @@
 var express = require('express')
 var app = express()
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 5000;
 app.post('/messages', function (req, res) {
   var requestBody=req;
-  console.log(JSON.stringify(requestBody));
+  console.log(requestBody);
   res.send('Hello World!')
 })
 
