@@ -11,7 +11,7 @@ var port = process.env.PORT || 5000;
 app.post('/messages', function (req, res) {
   var requestBody=req.body;
   console.log(JSON.stringify(requestBody));
-  res.send('Success : '+req.body);
+  res.send('Success : '+JSON.stringify(req.body));
 })
 
 app.get('/data', function (req, res) {
